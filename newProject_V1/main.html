@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="refresco.js" defer></script>
+
+
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: "Lato", sans-serif
+        }
+    
+        .w3-bar,
+        h1,
+        button {
+          font-family: "Montserrat", sans-serif
+        }
+    
+        .fa-anchor,
+        .fa-coffee {
+          font-size: 200px
+        }
+      </style>
+      </style>
+      <style type="text/css">
+        .w3-upc-blue {
+          color: #fff !important;
+          background-color: #007BC0 !important;
+        }
+      </style>
+    
+    
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        .imgContainer {
+          float: left;
+        }
+    
+        * {
+          box-sizing: border-box
+        }
+    
+        body {
+          font-family: Verdana, sans-serif;
+          margin: 0
+        }
+    
+        .mySlides {
+          display: none
+        }
+    
+        img {
+          vertical-align: middle;
+        }
+    
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+    
+        /* Next & previous buttons */
+        .prev,
+        .next {
+          cursor: pointer;
+          position: relative;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: rgb(255, 187, 0);
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+    
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+    
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+          background-color: rgba(0, 0, 180, 0.3);
+        }
+    
+    
+        /* Caption text */
+        .text {
+          color: #000000;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: right;
+        }
+    
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: rgba(0, 0, 0, 0.4);
+          font-size: 24px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+    
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+    
+        .active,
+        .dot:hover {
+          background-color: #717171;
+        }
+    
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 2s;
+        }
+    
+        @-webkit-keyframes fade {
+          from {
+            opacity: .4
+          }
+    
+          to {
+            opacity: 1
+          }
+        }
+    
+        @keyframes fade {
+          from {
+            opacity: .4
+          }
+    
+          to {
+            opacity: 1
+          }
+        }
+    
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+    
+          .prev,
+          .next,
+          .text {
+            font-size: 11px
+          }
+        }
+      </style>
+    
+      <style>
+        .collapsible {
+          background-color: rgb(255, 255, 255);
+          color: rgb(0, 0, 0);
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+        }
+    
+        .active,
+        .collapsible:hover {
+          background-color: rgb(2, 204, 254);
+        }
+    
+        .content {
+          padding: 0 18px;
+          display: none;
+          overflow: hidden;
+          background-color: rgb(237, 245, 221);
+        }
+      </style>
+    
+</head>
+<body>
+    
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-upc-blue w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-upc-blue"
+        href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">IONO4HAS-Home</a>
+      <a href="network.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Networks</a>
+      <a href="tests.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tests</a>
+      <a href="results.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Results</a>
+      <a href="products.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Products</a>
+      <a href="plusinfo.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">+Info</a>
+
+
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">IONO4HAS-Home</a>
+      <a href="network.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Networks</a>
+      <a href="tests.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tests</a>
+      <a href="results.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Results</a>
+      <a href="products.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Products</a>
+      <a href="plusinfo.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">+Info</a>
+    </div>
+  </div>
+    
+  <h1>Satellite Plot</h1>
+    
+
+  <button id="btnImagen1" data-visible="false">Mostrar Imagen 1</button>
+    <button id="btnImagen2" data-visible="false">Mostrar Imagen 2</button>
+
+
+<!--CODIGO FUNCIONAL PERO NO OCULTA LA IMAGEN AL PULSAR NUEVAMENTE SOBRE ELLA:
+
+  <button id="btnImagen1">IMG1</button>
+  <button id="btnImagen2">IMG2</button>
+
+
+-->
+
+  <button id="btnImagen1">IMG1.1</button>
+  <button id="btnImagen2">IMG2.1</button>
+
+<!--
+  <button id="btnImagen1">IMG1<img src="images/imagen1.png" alt="Imagen 1"></button>
+  <button id="btnImagen2">IMG2<img src="images/imagen2.png" alt="Imagen 2"></button>
+  
+-->
+
+  <div id="imagenContainer"></div>
+
+  <br>
+
+  <img id="imagenActualizada" src="" alt="Imagen en tiempo real">
+  <script src="actualizarImagen.js"></script>
+
+  <br>
+
+  <div id="table">
+    <table class="center">
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G01 clock estimate</span><a
+              href="images/clock_output_G01.png"><button>G01</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G02 clock estimate</span><a
+              href="images/clock_output_G02.png"><button>G02</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G03 clock estimate</span><a
+              href="images/clock_output_G03.png"><button>G03</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G04 clock estimate</span><a
+              href="images/clock_output_G04.png"><button>G04</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G05 clock estimate</span><a
+              href="images/clock_output_G05.png"><button>G05</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G06 clock estimate</span><a
+              href="images/clock_output_G06.png"><button>G06</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G07 clock estimate</span><a
+              href="images/clock_output_G07.png"><button>G07</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G08 clock estimate</span><a
+              href="images/clock_output_G08.png"><button>G08</button> </a></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G09 clock estimate</span><a
+              href="images/clock_output_G09.png"><button>G09</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G10 clock estimate</span><a
+              href="images/clock_output_G10.png"><button>G10</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G11 clock estimate</span><a
+              href="images/clock_output_G11.png"><button>G11</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G12 clock estimate</span><a
+              href="images/clock_output_G12.png"><button>G12</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G13 clock estimate</span><a
+              href="images/clock_output_G13.png"><button>G13</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G14 clock estimate</span><a
+              href="images/clock_output_G14.png"><button>G14</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G15 clock estimate</span><a
+              href="images/clock_output_G15.png"><button>G15</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G16 clock estimate</span><a
+              href="images/clock_output_G16.png"><button>G16</button> </a></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G17 clock estimate</span><a
+              href="images/clock_output_G17.png"><button>G17</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G18 clock estimate</span><a
+              href="images/clock_output_G18.png"><button>G18</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G19 clock estimate</span><a
+              href="images/clock_output_G19.png"><button>G19</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G20 clock estimate</span><a
+              href="images/clock_output_G20.png"><button>G20</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G21 clock estimate</span><a
+              href="images/clock_output_G21.png"><button>G21</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G22 clock estimate</span><a
+              href="images/clock_output_G22.png"><button>G22</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G23 clock estimate</span><a
+              href="images/clock_output_G23.png"><button>G23</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G24 clock estimate</span><a
+              href="images/clock_output_G24.png"><button>G24</button> </a></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G25 clock estimate</span><a
+              href="images/clock_output_G25.png"><button>G25</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G26 clock estimate</span><a
+              href="images/clock_output_G26.png"><button>G26</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G27 clock estimate</span><a
+              href="images/clock_output_G27.png"><button>G27</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G28 clock estimate</span><a
+              href="images/clock_output_G28.png"><button>G28</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G29 clock estimate</span><a
+              href="images/clock_output_G29.png"><button>G29</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G30 clock estimate</span><a
+              href="images/clock_output_G30.png"><button>G30</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G31 clock estimate</span><a
+              href="images/clock_output_G31.png"><button>G31</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">G32 clock estimate</span><a
+              href="images/clock_output_G32.png"><button>G32</button> </a></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E01 clock estimate</span><a
+              href="images/clock_output_E41.png"><button>E01</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E02 clock estimate</span><a
+              href="images/clock_output_E42.png"><button>E02</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E03 clock estimate</span><a
+              href="images/clock_output_E43.png"><button>E03</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E04 clock estimate</span><a
+              href="images/clock_output_E44.png"><button>E04</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E05 clock estimate</span><a
+              href="images/clock_output_E45.png"><button>E05</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E06 clock estimate</span><a
+              href="images/clock_output_E46.png"><button style="background-color:red">E06</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E07 clock estimate</span><a
+              href="images/clock_output_E47.png"><button>E07</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E08 clock estimate</span><a
+              href="images/clock_output_E48.png"><button>E08</button> </a></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E09 clock estimate</span><a
+              href="images/clock_output_E49.png"><button>E09</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E10 clock estimate</span><a
+              href="images/clock_output_E50.png"><button>E10</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E11 clock estimate</span><a
+              href="images/clock_output_E51.png"><button>E11</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E12 clock estimate</span><a
+              href="images/clock_output_E52.png"><button>E12</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E13 clock estimate</span><a
+              href="images/clock_output_E53.png"><button>E13</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E14 clock estimate</span><a
+              href="images/clock_output_E54.png"><button>E14</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E15 clock estimate</span><a
+              href="images/clock_output_E55.png"><button>E15</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E16 clock estimate</span><a
+              href="images/clock_output_E56.png"><button style="background-color:red">E16</button> </a></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E17 clock estimate</span><a
+              href="images/clock_output_E57.png"><button style="background-color:red">E17</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E18 clock estimate</span><a
+              href="images/clock_output_E58.png"><button>E18</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E19 clock estimate</span><a
+              href="images/clock_output_E59.png"><button>E19</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E20 clock estimate</span><a
+              href="images/clock_output_E60.png"><button style="background-color:red">E20</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E21 clock estimate</span><a
+              href="images/clock_output_E61.png"><button>E21</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E22 clock estimate</span><a
+              href="images/clock_output_E62.png"><button style="background-color:red">E22</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E23 clock estimate</span><a
+              href="images/clock_output_E63.png"><button style="background-color:red">E23</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E24 clock estimate</span><a
+              href="images/clock_output_E64.png"><button>E24</button> </a>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E25 clock estimate</span><a
+              href="images/clock_output_E75.png"><button>E25</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E26 clock estimate</span><a
+              href="images/clock_output_E76.png"><button>E26</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E27 clock estimate</span><a
+              href="images/clock_output_E77.png"><button>E27</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E28 clock estimate</span><a
+              href="images/clock_output_E78.png"><button style="background-color:red">E28</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E29 clock estimate</span><a
+              href="images/clock_output_E79.png"><button style="background-color:red">E29</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E30 clock estimate</span><a
+              href="images/clock_output_E80.png"><button>E30</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E31 clock estimate</span><a
+              href="images/clock_output_E81.png"><button>E31</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E32 clock estimate</span><a
+              href="images/clock_output_E82.png"><button style="background-color:red">E32</button> </a> </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E33 clock estimate</span><a
+              href="images/clock_output_E83.png"><button>E33</button> </a> </div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E34 clock estimate</span><a
+              href="images/clock_output_E84.png"><button style="background-color:red">E34</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E35 clock estimate</span><a
+              href="images/clock_output_E85.png"><button style="background-color:red">E35</button> </a></div>
+        </td>
+        <td>
+          <div class="tooltip"><span class="tooltiptext">E36 clock estimate</span><a
+              href="images/clock_output_E86.png"><button>E36</button> </a></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+
+</body>
+</html>

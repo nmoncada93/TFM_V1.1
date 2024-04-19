@@ -1,0 +1,138 @@
+//https://www.youtube.com/watch?v=bXqPNoYFK8w 
+//////////////////////////////////////////////////RESET DE TODO EL CSS/////////////////////////////////////////////////////////
+
+
+/* Definimos las Custom properties */
+:root{
+    /* Colores */
+    --color-first       : #181818;
+    --color-second      : #f0f0f0;
+    
+    /* Tipografía */
+    --font-first   : Helvetica, Arial, sans-serif;
+    --font-second  : Verdana;
+  }
+    
+  /* (Opcional) Las adaptamos al modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root{
+        --color-first         : #f0f0f0;
+        --color-second        : #181818;
+    }
+  }
+  
+  /* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+  @media (prefers-contrast: high){
+      :root{
+        --color-first         : white;
+        --color-second        : black;
+      }
+  }
+  
+  /* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+/*Reseteamos los margin y Paddings de las etiquetas */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; //solventamos lso problemas d emodelo caja
+    vertical-align: baseline;
+}
+
+/*Evitamos problemas con imagenes y videos*/
+img, picture, video, iframe, figure{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /*opcional*/object-fit: cover;
+    /*opcional*/object-position: center center;
+}
+
+//Resetemaos los enlaces para funcionar como cajas...
+a {
+    display: block;
+    /*opcional*/text-decoration: none;
+    /*opcional*/color:inherit;
+    /*opcional*/font-size:inherit;
+}
+
+//...Excepto los que se encuentran en parrafos
+p a {
+    display: inline;
+}
+
+//Eliminamos los puntos de las listas <li>
+li {
+    list-style-type: none;
+}
+
+/*Configuramos anclas suaves*/
+html {
+    scroll-behavior: smooth;
+}
+
+//Desactivamos estilos por defecto de las principales etiquetas de texto
+h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em {
+    font-size: 1em; //se adapta según el tamaño de la etiqueta de body
+    font-weight: inherit; //nos servirá con BEM, así lo configuraremos desde la etiqueta bloque
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+    background-color: var(black);
+    color: var(white);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form , input, textarea, select , button , label{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    color:inherit;
+    display: block;
+    /* (Opcional) */ appearance: none;
+}
+
+/* Reseteamos las tablas */
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg{
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height  : 100vh; //Altura minima
+  font-size   : 100%; //Ideal para que se adapte a lo que configura el usuario
+  font-family : var(--font-first);
+  color       : var(--color-first);
+  background-color: var(--color-second);
+  /* (opcional) */ line-height: 1.4em; //por cuestiones de diseño con las WCAG
+  /* (Opcional) */ hyphens: auto; //si algun texto no cabe, pondrá un guión y lo enviará a la linea siguiente, se evita desbordamiento
+  /* (Opcional) */ font-smooth: always;
+  /* (Opcional) */ -webkit-font-smoothing: antialiased;
+  /* (Opcional) */ -moz-osx-font-smoothing: grayscale; //mejora la tipografía
+}

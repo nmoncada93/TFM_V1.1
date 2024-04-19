@@ -1,0 +1,92 @@
+        <form action="URL DONDE SE ENVIAN LOS DASTOS RECOPILADOS" method="post" aria-label="formulariosocio"> 
+            <!--method y post son "obligatorios"-->
+            <!--method DEFINE CON QUE METODO HTTP SE ENVIAN LOS DATOS (get o post)-->
+                <p>Los campos señalados con <abbr title="required">*</abbr> son obligatorios</p>
+                <fieldset> <!--ES LA UNICA MANERA SEMANTICAMENTE CORRECTA DE "ANIDAR" VARIAS PARTES DE UN FORMULARIO DENTRO DEL MISMO-->
+                    <legend>Tipo de cuota *</legend> <!--DESCRIBE EL PROPOSITO DE "fieldset" O SEA DEL FRAGMENTO DE MI FORMULARIO Y ES ACCESIBLE!!!! LO LECTORES LO LEEN-->
+                    <ul>
+                        <li>
+                            <input id="mensual" type="radio" name="selected" aria-label="cuota mensual">
+                            <label for="mensual">Mensual (30€)</label>
+                        </li>
+
+                        <li>
+                            <input id="trimestral" type="radio" name="selected" aria-label="cuota trimestral">
+                            <label for="trimestral">Trimestral (45€)</label>
+                        </li>
+
+                        <li>
+                            <input id="anual" type="radio" name="selected" aria-label="cuota anual">
+                            <label for="anual">Anual (100€)</label>
+                        </li>
+                    </ul>
+                </fieldset>    
+
+    <!-- FUENTE: https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation#ejemplo_completo:~:text=como%20no%20v%C3%A1lidos.-,Ejemplo%20completo,-Aqu%C3%AD%20hay%20un -->
+    <!--label DEBE ESTAR ASOCIADA CORRECTAMENTE CON input "id" POR MEDIO DEL "for" ESTO ES NECESARIO PARA LA ACCESIBILIDAD!!!!!-->
+    <!--AL COINCIDIR for="name" Y EN EL input id="name" HACE POSIBLE QUE SOLO CLICANDO EL TEXTO "nombre:" SE ACTIVE LA CASILLA DE RELLENAR EL CAMPO VACÍO-->
+    <!--"type" DEFINE COMO SE COMPORTA INPUT, PUEDE SER: ("text" o "date" o "email" o "password" o "checkbox" o "file" o "number" o "tel")-->
+    <!--"name" EN CLEINTE Y EN SERVIDOR ES LA MANERA DE PONER "UN NOMBRE" A MI DATO PARA IDENTIFICARLO POSTERIORMENTE Y TRATARLO-->
+    <!--"placeholder" ME DESCRIBE EL PROPOSITO DEL CAMPO VACÍO-->
+    <!--name SIRVE PARA ASOCIAR VARIOS BOTONES DE SELECCION, AL TOCAR UNO LOS DEMÁS SE DESELECCIONAN-->
+    <!--"required" SE USA POR SI SE LE DA "ENVIAR" Y FALTA UN DATO, NOS AVISARA!-->
+    <!--"title" PERMITE VER EL MENSAJE DE "CAMPO OBLIGATORIO" AL PONER EL RATON ENCIMA PERO DEBERIA IR ACOMPAÑADO DE "aria-label"-->
+    <!-- "aria-label" ACCESIBLE PARA LECTORES DE PANTALLA TIENE LA MISMA FUNCIÓN QUE "TITLE"-->
+    <!-- value="I'm a text field"> ESTO PERMITE TENER UN TEXTO YA ESCRITO PREDETERMINADO DENTRO EL CAMPO-->
+    <!--DETALLES DE ACCESIBILIDAD https://www.w3.org/WAI/tutorials/forms/labels/ -->
+                <fieldset>
+                    <legend>Datos personales y de contacto</legend>
+                    <div class="left">
+                        <label for="name">Nombre:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                        <input id="name" type="text" name="user_name" aria-label="introduzca su nombre" pattern="[A-Za-z]{2,64}" minlength="2" maxlength="64" required><br>
+                        <!--se usa "aria-label" de modo accesible para los lectores-->
+
+                        <label for="mail">Correo electrónico:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                        <input id="mail" type="email" name="user_mail" aria-label="introduzca su email" required>
+                    </div>
+
+                    <div class="right">
+                        <label for="surname">Apellidos:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                        <input id="surname" type="text" name="user_surname" aria-label="introduzca su apellido" pattern="[A-Za-z]{2,128}" required><br>
+
+                        <label for="phone">Teléfono:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                        <input id="phone" type="tel" name="user_phone" aria-label="introduzca su telefono"  required><br>
+                    </div>
+                    <label for="birthdate">Fecha de nacimiento:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                    <input class="date" id="birthdate" type="date" name="user_birthdate" min="1920-01-01" max="2023-12-31" aria-label="introduzca su fecha de nacimiento" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Otras informaciones</legend>
+                    <label for="intereses">¿Por qué estás interesado en hacerte socio?</label><br>
+                    <textarea id="intereses" name="user_intereses"></textarea><br>
+                    <label for="medios">¿Por qué medio nos has conocido?</label><br>
+                    <select id="medios" name="select_social">
+                        <option selected="selecciona una opción">Selecciona una opción</option>
+                        <!--<optgroup> sería para agrupar dentro del desplegable-->
+                        <option value="prensa">Prensa</option> <!--REVISAR "value"-->
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="otro socio">Otro socio</option>
+                        <!--"value"-> No es imprescindible usarlo, pero puede servir para dar mas detalle de la opcón seleccionada-->
+                    </select>
+                </fieldset>
+
+                <fieldset class="pago">
+                    <legend>Pago</legend>
+                    <label for="titular_cuenta">Titular de la cuenta:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                    <input id="titular_cuenta" type="text" name="titular_cuenta" aria-label="titular de la cuenta"  required><br>
+
+                    <label for="numero_cuenta">Número de cuenta:<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label><br>
+                    <input id="numero_cuenta" type="text" name="numero_cuenta" placeholder="IBAN" aria-label="numero de cuenta" required><br>
+                    <!--se ha usado "placeholder" como una practica buena para dar más detalle  del dato que se espera recibir-->
+                </fieldset>
+
+                <div class="div-form-footer">
+                    <p>INFORMACIÓN SOBRE PROTECCIÓN DE DATOS DE <strong>RITMO</strong>. <strong>Finalidades:</strong> recogida de datos para la inscripción como socio del interesado. <strong>Legitimación:</strong> Consentimiento del intersado. <strong>Destinatarios:</strong> No están previstas cesiones de datos a terceros, excepto obligación legal. <strong>Derechos:</strong> Puede retirar su consentimieno en cualquier momento, así como acceder, rectificar, suprimir sus datos y otros derechos dirigiéndose a <a href="mailto:info@ritmo.org"> info@ritmo.org</a>. <strong>Información Adicional:</strong> Puede ampliar la información en el enlace de <a href="#">Aviso Legal</a> y <a href="#">Política de privacidad</a>.
+                    </p>
+                    <input type="checkbox" id="consent" name="user_consent" value="consentimiento_aceptado" aria-label="acepto y doy mi consentimiento" required>
+                    <label for="consent">He leído y acepto la <a href="#">política de privacidad</a></label><br>
+                    <button type="submit">ENVIAR</button> <!--submit ES EL PREDETERMINADO Y ENVIA LOS DATOS DEL FORMULARIO-->
+                </div>   
+        </form>

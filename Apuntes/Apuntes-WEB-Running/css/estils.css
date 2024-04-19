@@ -1,0 +1,617 @@
+/*Estils per a Ritme */
+:root {
+    --text-color: rgb(23,23,23);
+    --contrast-color: rgb(222, 12, 23);
+    --bg-dark-color: rgb(0,0,0); 
+    --bg-light-color: rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+h1, h2 {   
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-color);
+}
+
+a:hover {
+    color: var(--contrast-color);
+    border-bottom: 1px dotted var(--contrast-color);
+}
+
+cite {
+    font-style: normal;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 30px;
+    list-style-type: square;
+}
+ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+figure   {
+    width: 75%;
+    margin: 50px auto;
+}
+figcaption {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.75rem;
+}
+
+/****************************
+Videos del lloc web
+*****************************/
+.video-fluid {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.video-fluid-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-fluid::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+
+/*Classe per amagar un element que serà visible únicament als lectors de pantalla (aplicat per a millorar l'accessibilitat)*/
+.sr {
+    position:absolute;
+    height:1px;    
+    width:1px;    
+    overflow:hidden;    
+    clip:rect(1px, 1px, 1px, 1px);
+}
+
+/****************************
+Contenidors del lloc
+*****************************/
+header {
+    height: 20vh;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--bg-dark-color);
+}
+
+footer {
+    height: 15vh;
+    padding-top: 15px;
+    padding-bottom: 15px;    
+    background-color: var(--bg-dark-color);
+    color: #fff;
+}
+
+main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/*
+Les regles que van a continuació aconsegueixen que els continguts dins de l'element de class .container s'adaptin als diversos dispositius.
+La class .container defineix un contenidor que ocupa el 100% de la pantalla del dispositiu, amb un farcit per l'esquerra i per la dreta de 15 píxels, i marges per l'esquerra i per la dreta automàtics, per aconseguir un disseny centrat.
+A continuació utilitzem media queries, un mòdul de CSS3 que permet adaptar la representació del contingut a les característiques del dispositiu i que s'estudia en la unitat 5.
+Amb les 4 media queries utilitzades indiquem l'amplada màxima que el .container ha de tenir quan els dispositius tinguin l'amplada mínima indicada pel punt de trencament (breakpoint).
+*/
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+  
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+}
+  
+@media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+}
+
+/****************************
+Titular del lloc
+*****************************/
+
+h1.banner {
+    color: white;
+}
+
+h1.banner::before {
+    background-image: url(../img/isologo-white.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    display: inline-block;
+    width: 2rem; 
+    height: 2rem;
+    margin-right: 15px;
+    content:"";
+}
+
+h1.banner a {
+    color: inherit;
+    border: none;
+}
+
+/*************************
+Continguts del footer
+**************************/
+footer {
+    font-size: 0.8rem;
+    color: white;
+}
+
+footer p {
+    font-size: inherit;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: inherit;
+    border: none;
+}
+
+footer a:hover {
+    border: none;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+footer ul li::after {
+    content: "·";
+    padding-left: 10px;
+}
+footer ul li:last-child::after {
+    content: "";
+    padding-left: 10px;
+}
+
+
+/****************************
+Menú de navegació del lloc
+*****************************/
+nav {
+    text-align: left;
+    color: white;
+}
+nav ul {
+    padding-left: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding-left: 0;
+}
+
+nav ul li::before {
+    content: " | ";
+    width: 10px;
+}
+
+nav ul li:first-child::before {
+    content: "";
+}
+
+nav ul li a {
+    color: inherit;
+    border: none;
+}
+
+nav ul li a:hover {
+    border: none;
+    color: var(--contrast-color);
+}
+
+nav li.active {
+    font-weight: 700;
+}
+
+nav li.active::before {
+    font-weight: 400;
+}
+
+/****************************
+Artículo 
+****************************/
+article footer {
+    height: auto;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 0.85rem;
+}
+main a {
+    color: inherit;
+    border-bottom: 1px dotted var(--text-color);
+}
+
+main a:hover {
+    border-bottom: 1px dotted var(--contrast-color);
+}
+
+/****************************
+Pàgina d'inici
+*****************************/
+body.home {
+    background-image: url(../img/home-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    color: white;
+}
+
+body.home header {
+    background-color: transparent;
+}
+
+body.home main {
+    padding-top: 10vh;
+    height: 65vh;
+}
+
+body.home footer {
+    background-color: transparent;
+}
+
+body.home h1 {
+    font-size: 6rem;
+    line-height: 1;
+}
+
+body.home h1::before {
+    background-image: url(../img/isologo-white.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    display: inline-block;
+    width: 6rem; 
+    height: 6rem;
+    margin-right: 15px;
+    content:"";
+}
+
+body.home a {
+    color: inherit;
+    border: none;
+}
+
+body.home a:hover {
+    border: none;
+    color: var(--contrast-color);
+}
+body.home nav ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+body.home nav ul li {
+    font-size: 1.3rem;
+}
+
+body.home main p {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+body.home footer p {
+    margin-bottom: 0.5rem;
+}
+
+/*Aquesta regla permet que la mida de la lletra d'aquests dos elements de la pàgina d'inici tinguin una mida més gran quan tinguem una pantalla d'una amplada mínima de 1200 píxels */
+
+@media (min-width: 1200px) {
+    body.home h1 {
+        font-size: 9rem;
+    }
+    body.home main p {
+        font-size: 2.3rem;
+    }
+}
+
+/***************************
+Rutes
+***************************/
+/*Aquesta classe afegirà una barra de desplaçament horitzontal quan sigui necessari per tal que els usuaris que vegin la taula en dispositius petits puguin desplaçar-se cap a la dreta per tal de veure el contingut complet de la taula */
+.tableFluid {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 1.5rem;
+    border-top: 1px solid var(--text-color);
+}
+
+td, th {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+td,th {
+    vertical-align: bottom;
+    text-align: center;
+}
+
+th[scope="col"]:first-of-type {
+    text-align: left;
+}
+
+th[scope="col"] {
+    font-weight: normal;
+    font-size: 1rem;
+    width: 25%;
+}
+th[scope="row"] {
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: left;
+    width: 5%;
+}
+
+thead tr {
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--bg-light-color); 
+}
+
+tfoot {
+    border-bottom: 1px solid var(--text-color);
+}
+
+tfoot td {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+div.call-to-action {
+    background-color: var(--bg-light-color);
+    padding: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+thead tr th::before {
+    content: "";
+    display:blocK;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+thead tr th:first-child::before {
+    background-image: url(../img/location.png);
+}
+thead tr th:nth-child(2n)::before {
+    background-image: url(../img/distance.png);
+    margin-left: auto;
+    margin-right: auto;
+}
+thead tr th:nth-child(3n)::before {
+    background-image: url(../img/time.png);
+    margin-left: auto;
+    margin-right: auto;
+}
+thead tr th:last-child::before {
+    background-image: url(../img/angle.png);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.call-to-action p:first-of-type {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+div.call-to-action p:last-of-type {
+    font-size: 1rem;
+}
+
+
+
+/****************************
+Formulari per fer-se soci
+*****************************/
+.required {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+form {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+fieldset {
+	padding: 2rem;
+	border: 1px solid #000;
+	margin: 15px 0;
+}
+
+.outFieldset {
+    padding: 2rem;
+}
+
+legend {
+	font-weight: 700;
+    font-size: 1.5rem;
+}
+
+form ul {
+	list-style-type: none;
+    padding-left: 0;
+}
+
+form ul li {
+	margin-bottom: 1rem;
+}
+
+label {
+	display: block;
+	padding-bottom: 1rem;
+}
+
+ul.radioGroup:first-child {
+    padding-top: 1rem;
+}
+
+.radioGroup label, .controlInlineContent label {
+    display: inline;
+}
+
+input, select, textarea {
+    border: 1px solid #000;
+	padding: 15px;
+	font-size: 1.1rem;
+}
+
+input, select, textarea {
+	width: 99%;
+}
+
+textarea {
+    height: 15rem;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	width: auto;
+}
+
+input[type="radio"]+label, input[type="checkbox"]+label {
+    display: inline;
+}
+
+input:focus, textarea:focus {
+    background-color: var(--bg-light-color);
+}
+
+button {
+    display: inline-block;
+    width: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px 30px;
+    background-color: var(--contrast-color);
+    color: #FFF;
+    font-size: 1.1rem;
+    border: none;
+    text-transform: uppercase;
+    appearance: none; 
+}
+
+button:hover {
+    box-shadow: 0 7px 14px var(--contrast-color),0 3px 6px transparent;
+    cursor: pointer;
+}
+
+
+/* Quan tinguem com a mínim 768px en el viewport, interessarà que els elements amb aquestes classes es mostrin l'un al costat de l'altre i adaptin la seva amplada*/
+@media (min-width: 768px) {
+    form {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    li.controlInlineHalf {
+        display: inline-block;
+        width: 49%;
+    }
+
+    li.controlInlineHalf+li.controlInlineHalf {
+        margin-left: 4px;
+    }
+    
+    .half {
+        width: 50%;
+    }
+
+}
+
+

@@ -1,0 +1,177 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: rgb(0,0,0);
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    font-weight: 400;
+    line-height: 1.1em;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -4px;
+}
+h1>span {
+    color: #ea6628;
+    letter-spacing: normal;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedores para imágenes */
+figure {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+figure.hero {
+    width: 100%;
+}
+
+figcaption {
+    font-size: 0.7rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+iframe {
+    border: 0;
+}
+
+/*Clase para esconder un elemento que será visible únicamente a los lectores de pantalla (aplicado para mejorar la accesibilidad)*/
+.sr {
+    position:absolute;
+    height:1px;    
+    width:1px;    
+    overflow:hidden;    
+    clip:rect(1px, 1px, 1px, 1px);
+}
+
+/* Contenedores del sitio */
+
+header.header {
+    text-align: center
+}
+
+footer.footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #91d3c5;
+    text-align: center;
+}
+
+footer p.credits {
+    font-size: 0.75rem;
+}
+
+footer a {
+    color: #167763;
+}
+
+main {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Menú de navegació */
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+nav a {
+    color: #000;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+nav a.current {
+    font-size: 1.6rem;
+}
+
+/* Estilos para los artículos */
+article p.intro {
+    text-align: center;
+}
+
+article p.credits {
+    text-align: center;
+}
+
+strong.fake {
+    color: red;
+}
+
+blockquote p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+article ul {
+    list-style-type: square;
+}
+
+article dt {
+    font-size: 1.2rem;
+    color: #ea6628;
+    font-weight: 700;
+}
+
+article ul.library {
+    list-style-type: none;
+    list-style-image: url('../img/book.png');
+    font-size: 1.3rem;
+}
+
+article ul.library ul {
+    list-style-image: none;
+    list-style-type: circle;
+    font-size: 1rem; 
+}
